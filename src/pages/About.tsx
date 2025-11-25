@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -128,25 +129,27 @@ const About = () => {
       </section>
 
       {/* Future Works */}
-      <section className="container py-20 bg-muted/30 -mx-[100vw] px-[100vw]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-12">
-            What's Next
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {futureWorks.map((work, index) => (
-              <Card key={index} className="p-8 space-y-4 bg-card">
-                <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-                  {work.status}
-                </div>
-                <h3 className="text-2xl font-serif font-bold">{work.title}</h3>
-                <p className="text-muted-foreground">{work.description}</p>
-              </Card>
-            ))}
+      <section className="py-20 bg-muted/30">
+        <div className="container">
+          <div className="max-w-6xl mx-auto space-y-10 rounded-[32px] border border-border/40 bg-background/30 p-6 sm:p-10 shadow-2xl">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-center">
+              What's Next
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {futureWorks.map((work, index) => (
+                <Card key={index} className="p-8 space-y-4 bg-card">
+                  <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                    {work.status}
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold">{work.title}</h3>
+                  <p className="text-muted-foreground">{work.description}</p>
+                </Card>
+              ))}
+            </div>
+            <p className="text-center text-muted-foreground">
+              Join the newsletter to follow the journey and be the first to know about new releases.
+            </p>
           </div>
-          <p className="text-center mt-8 text-muted-foreground">
-            Join the newsletter to follow the journey and be the first to know about new releases.
-          </p>
         </div>
       </section>
 
@@ -157,7 +160,7 @@ const About = () => {
             Let's Connect
           </h2>
           
-          <div className="flex justify-center gap-6 mb-12">
+          <div className="flex flex-wrap justify-center gap-6 mb-12">
             <Button variant="outline" size="lg" asChild>
               <a href="#" aria-label="Instagram">
                 <Instagram className="h-5 w-5 mr-2" />
@@ -178,7 +181,7 @@ const About = () => {
             </Button>
           </div>
 
-          <Card className="p-8 bg-card">
+          <Card className="p-8 bg-card max-w-3xl mx-auto">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input

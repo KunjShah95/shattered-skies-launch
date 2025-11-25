@@ -29,17 +29,17 @@ const Newsletter = () => {
   const pastUpdates = [
     {
       title: "Worldbuilding Notes: Cities Above the Clouds",
-      date: "March 2024",
+      date: "March 2025",
       description: "An in-depth look at the floating cities and their unique architectures.",
     },
     {
       title: "Meet the Main Characters",
-      date: "February 2024",
+      date: "February 2025",
       description: "Character profiles, backstories, and the inspiration behind each protagonist.",
     },
     {
       title: "How the Ending Almost Changed",
-      date: "January 2024",
+      date: "January 2025",
       description: "A fascinating look at the original ending and why it was rewritten.",
     },
   ];

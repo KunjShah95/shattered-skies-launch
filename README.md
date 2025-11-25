@@ -36,6 +36,22 @@ npm i
 npm run dev
 ```
 
+### Port conflict notice
+If you visit the dev server (default `http://localhost:5173`) and see a different web service (for example, a database admin UI such as EDB/Postgres), another process is listening on the web port.
+
+Options:
+- Stop the conflicting service (for example, stop the EDB Postgres admin service or Docker container).
+	- On Windows:
+		- Check what's listening: `netstat -aon | findstr :8080`
+		- Get the process name: `tasklist /FI "PID eq <PID>"`
+		- Kill the process: `taskkill /PID <PID> /F`
+	- If it's a Docker container: `docker ps` and `docker stop <container_id>`
+- Or change the Vite dev port to 5173 (default) or other port if you prefer.
+	- Start the dev server on a different port temporarily via CLI: `npm run dev -- --port 5173`
+	- Or permanently change the port in `vite.config.ts` or `package.json` script - this project defaults to port 5173 now.
+
+If you've changed ports, open `http://localhost:<port>` in your browser to access the app.
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
