@@ -21,8 +21,8 @@ const Buy = () => {
   });
 
   const prices = {
-    ebook: 9.99,
-    paperback: 19.99,
+    ebook: 299,
+    paperback: 599,
   };
 
   const handlePurchase = (e: React.FormEvent) => {
@@ -49,7 +49,7 @@ const Buy = () => {
                 <p>Format: {format === "ebook" ? "eBook (Digital Download)" : "Paperback (Physical)"}</p>
                 <p>Quantity: {quantity}</p>
                 <p className="text-xl font-bold text-foreground mt-4">
-                  Total: ${(prices[format as keyof typeof prices] * quantity).toFixed(2)}
+                  Total: ₹{(prices[format as keyof typeof prices] * quantity).toFixed(0)}
                 </p>
               </div>
               <p>
@@ -136,7 +136,7 @@ const Buy = () => {
                             <p className="font-semibold">eBook (Digital Download)</p>
                             <p className="text-sm text-muted-foreground">PDF, EPUB, MOBI formats</p>
                           </div>
-                          <p className="text-lg font-bold">${prices.ebook}</p>
+                          <p className="text-lg font-bold">₹{prices.ebook}</p>
                         </div>
                       </Label>
                     </div>
@@ -148,7 +148,7 @@ const Buy = () => {
                             <p className="font-semibold">Paperback (Physical Book)</p>
                             <p className="text-sm text-muted-foreground">Ships within 5-7 days</p>
                           </div>
-                          <p className="text-lg font-bold">${prices.paperback}</p>
+                          <p className="text-lg font-bold">₹{prices.paperback}</p>
                         </div>
                       </Label>
                     </div>
@@ -225,7 +225,7 @@ const Buy = () => {
                   <div className="flex justify-between items-center mb-6">
                     <span className="text-lg font-semibold">Total:</span>
                     <span className="text-3xl font-bold gradient-text">
-                      ${(prices[format as keyof typeof prices] * quantity).toFixed(2)}
+                      ₹{(prices[format as keyof typeof prices] * quantity).toFixed(0)}
                     </span>
                   </div>
                   <Button type="submit" size="lg" className="w-full shadow-lg hover:shadow-xl transition-shadow">
