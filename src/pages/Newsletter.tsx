@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { BookOpen, Eye, Gift, Users } from "lucide-react";
+import { BookOpen, Eye, Gift, Users, Calendar, FileText } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
 
 const Newsletter = () => {
@@ -64,43 +64,68 @@ const Newsletter = () => {
 
       {/* What You Get */}
       <section className="container py-20">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4">
           What You'll Receive
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
+          As an insider, you'll get access to exclusive content and experiences
+        </p>
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => (
             <Card
               key={index}
-              className="p-8 space-y-4 hover:shadow-lg transition-all bg-card"
+              className="p-8 space-y-4 hover:shadow-xl transition-all hover:scale-[1.02] bg-card border-2 border-border/50 hover:border-primary/30"
             >
-              <benefit.icon className="h-10 w-10 text-primary" />
-              <h3 className="text-2xl font-semibold">{benefit.title}</h3>
-              <p className="text-muted-foreground">{benefit.description}</p>
+              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center">
+                <benefit.icon className="h-7 w-7 text-primary" strokeWidth={2.5} />
+              </div>
+              <h3 className="text-2xl font-bold">{benefit.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
             </Card>
           ))}
         </div>
       </section>
 
       {/* Past Updates */}
-      <section className="container py-20 bg-muted/30 -mx-[100vw] px-[100vw]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-12">
-            Sample Updates
-          </h2>
-          <div className="space-y-6">
-            {pastUpdates.map((update, index) => (
-              <Card key={index} className="p-6 bg-card">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div className="space-y-2 flex-1">
-                    <h3 className="text-xl font-semibold">{update.title}</h3>
-                    <p className="text-muted-foreground">{update.description}</p>
+      <section className="py-20 bg-muted/20">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4">
+              Sample Updates
+            </h2>
+            <p className="text-center text-muted-foreground text-lg mb-12">
+              Here's what subscribers have already received
+            </p>
+            <div className="space-y-4">
+              {pastUpdates.map((update, index) => (
+                <Card 
+                  key={index} 
+                  className="p-6 bg-card hover:shadow-lg transition-all hover:border-primary/20 group"
+                >
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <FileText className="h-6 w-6 text-primary" />
+                      </div>
+                    </div>
+                    <div className="flex-1 space-y-2">
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                          {update.title}
+                        </h3>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground flex-shrink-0">
+                          <Calendar className="h-4 w-4" />
+                          {update.date}
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {update.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-sm text-muted-foreground md:text-right">
-                    {update.date}
-                  </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
