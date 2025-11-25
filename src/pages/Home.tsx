@@ -63,7 +63,7 @@ const Home = () => {
                 destroy—everything they know.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="glow-gold">
+                <Button asChild size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
                   <Link to="/buy">Buy the Book</Link>
                 </Button>
                 <Button asChild size="lg" variant="secondary">
@@ -77,7 +77,7 @@ const Home = () => {
                 <img
                   src={bookCover}
                   alt="Shattered Skies Book Cover"
-                  className="rounded-lg shadow-2xl glow-teal"
+                  className="rounded-lg shadow-2xl"
                 />
               </div>
             </div>
@@ -162,13 +162,12 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
+      <section className="py-20 relative overflow-hidden bg-muted/30">
         <div className="container relative text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-serif font-bold">
             Ready to enter the world of <span className="gradient-text">Shattered Skies</span>?
           </h2>
-          <Button asChild size="lg" className="glow-gold">
+          <Button asChild size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
             <Link to="/buy">Buy the Book Now</Link>
           </Button>
         </div>

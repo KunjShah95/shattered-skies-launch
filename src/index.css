@@ -8,43 +8,41 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 245 40% 8%;
-    --foreground: 210 30% 96%;
+    --background: 210 20% 12%;
+    --foreground: 40 20% 92%;
 
-    --card: 245 35% 12%;
-    --card-foreground: 210 30% 96%;
+    --card: 210 18% 16%;
+    --card-foreground: 40 20% 92%;
 
-    --popover: 245 35% 12%;
-    --popover-foreground: 210 30% 96%;
+    --popover: 210 18% 16%;
+    --popover-foreground: 40 20% 92%;
 
-    --primary: 45 90% 60%;
-    --primary-foreground: 245 40% 8%;
+    --primary: 25 75% 55%;
+    --primary-foreground: 210 20% 12%;
 
-    --secondary: 180 70% 50%;
-    --secondary-foreground: 245 40% 8%;
+    --secondary: 160 45% 35%;
+    --secondary-foreground: 40 20% 92%;
 
-    --muted: 245 25% 18%;
-    --muted-foreground: 210 15% 65%;
+    --muted: 210 15% 22%;
+    --muted-foreground: 210 10% 60%;
 
-    --accent: 180 70% 50%;
-    --accent-foreground: 245 40% 8%;
+    --accent: 160 45% 35%;
+    --accent-foreground: 40 20% 92%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 245 25% 20%;
-    --input: 245 25% 20%;
-    --ring: 45 90% 60%;
+    --border: 210 15% 24%;
+    --input: 210 15% 24%;
+    --ring: 25 75% 55%;
 
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --gradient-cosmic: linear-gradient(135deg, hsl(245 50% 10%), hsl(260 60% 15%));
-    --gradient-hero: linear-gradient(to bottom right, hsl(245 40% 8%), hsl(260 45% 12%), hsl(245 35% 10%));
-    --gradient-accent: linear-gradient(135deg, hsl(45 90% 60%), hsl(35 85% 55%));
-    --glow-gold: 0 0 40px hsl(45 90% 60% / 0.3);
-    --glow-teal: 0 0 30px hsl(180 70% 50% / 0.3);
-    --shadow-premium: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+    --gradient-warm: linear-gradient(135deg, hsl(25 75% 55%), hsl(15 70% 50%));
+    --gradient-hero: linear-gradient(to bottom right, hsl(210 20% 12%), hsl(210 18% 18%), hsl(210 20% 14%));
+    --shadow-warm: 0 10px 40px -10px hsl(25 75% 55% / 0.25);
+    --shadow-deep: 0 10px 40px -10px hsl(0 0% 0% / 0.6);
   }
 }
 
@@ -72,14 +70,10 @@ All colors MUST be HSL.
   
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-accent);
+    background-image: var(--gradient-warm);
   }
 
-  .glow-gold {
-    box-shadow: var(--glow-gold);
-  }
-
-  .glow-teal {
-    box-shadow: var(--glow-teal);
+  .glow-warm {
+    box-shadow: var(--shadow-warm);
   }
 }

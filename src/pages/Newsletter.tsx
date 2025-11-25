@@ -107,7 +107,7 @@ const Newsletter = () => {
 
       {/* Final CTA */}
       <section className="container py-20">
-        <Card className="p-12 text-center space-y-6 bg-gradient-to-br from-primary/10 via-card to-secondary/10 max-w-3xl mx-auto">
+        <Card className="p-12 text-center space-y-6 bg-card border-primary/20 max-w-3xl mx-auto">
           <h2 className="text-4xl font-serif font-bold">
             This is for the readers who like to be <span className="gradient-text">early</span>
           </h2>
