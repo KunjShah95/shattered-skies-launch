@@ -228,7 +228,7 @@ const Buy = () => {
                       ${(prices[format as keyof typeof prices] * quantity).toFixed(2)}
                     </span>
                   </div>
-                  <Button type="submit" size="lg" className="w-full glow-gold">
+                  <Button type="submit" size="lg" className="w-full shadow-lg hover:shadow-xl transition-shadow">
                     Complete Purchase
                   </Button>
                   <p className="text-xs text-center text-muted-foreground mt-4">
